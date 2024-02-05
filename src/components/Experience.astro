@@ -1,0 +1,40 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Estudiante - Ingeniería de Sistemas",
+    description:
+      "Apasionado estudiante de Ingeniería de Sistemas con sólidos conocimientos en desarrollo web y programación. Comprometido con la innovación y la resolución de problemas, buscando oportunidades para aplicar y expandir mis habilidades en un entorno dinámico de desarrollo.",
+    link: "https://twitch.tv/midudev",
+  },
+  {
+    date: "Mayo 2022 – Agosto 2022",
+    title: "Desarrollador de Software – MinTic",
+    description:
+      "Desarrollé una aplicación web de encriptado de texto en JavaScript, implementando un cifrado seguro y una interfaz intuitiva en una página web alojada en GitHub, accesible para cualquier persona. La aplicación permite encriptar y desencriptar texto, con un rendimiento optimizado.",
+  },
+  {
+    date: "Septiembre 2022",
+    title: "Desarrollador Web – Fazt Code",
+    description:
+      "Implemente una aplicación web en React para la gestión de tareas, desplegada en GitHub. La aplicación permite agregar, leer, marcar como completada y eliminar tareas de manera intuitiva, con la funcionalidad de registrar la fecha de creación. Esta solución ofrece una interfaz fácil de usar y una arquitectura modular y escalable, asegurando un código limpio y mantenible.",
+  },
+  {
+    date: "Febrero 2023 – Junio 2023",
+    title: "Desarrollador Back-End – Fundación Universitaria de Popayán",
+    description:
+      "Creé una aplicación Back-End en Java para el control de un impuesto vehicular que permite registrar vehículos, buscar por placa y mostrar datos relevantes. Para optimizar las búsquedas, implementé algoritmos de ordenamiento como burbuja e inserción, así como una búsqueda binaria. Estas optimizaciones mejoraron la eficiencia y velocidad de las operaciones de búsqueda en la aplicación.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
