@@ -1,0 +1,57 @@
+<astro-fragment>
+  <style>
+    .rain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .icon {
+      position: absolute;
+      animation: fall linear infinite;
+      height: 60px;
+      width: 60px;
+      opacity: 0;
+    }
+
+    @keyframes fall {
+      from {
+        transform: translateY(-100px) rotate(0);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(100vh) rotate(60deg);
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <div class="rain-container">
+    <!-- Iconos de lenguajes de programación -->
+    <img class="icon" src="astro.svg" alt="astro" />
+    <img class="icon" src="css3.svg" alt="CSS3" />
+    <img class="icon" src="html5.svg" alt="HTML5" />
+    <img class="icon" src="javascript.svg" alt="JavaScript" />
+    <img class="icon" src="nodedotjs.svg" alt="NodeJS" />
+    <!-- Agrega los demás iconos aquí -->
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const icons = document.querySelectorAll(".icon");
+
+      icons.forEach((icon) => {
+        const randomX = Math.random() * window.innerWidth;
+        const randomDelay = Math.random() * 5; // Ajusta el rango de delay según sea necesario
+        const randomDuration = Math.random() * 5 + 5; // Ajusta la duración de la animación según sea necesario
+
+        icon.style.left = randomX + "px";
+        icon.style.animationDelay = randomDelay + "s";
+        icon.style.animationDuration = randomDuration + "s";
+      });
+    });
+  </script>
+</astro-fragment>
